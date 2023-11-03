@@ -19,8 +19,9 @@ const config = {
     "/build/",
     "/dist/",
     "/.next/",
+    "/styles/"
   ],
-  silent: true,
+  silent: false
 };
 
 export default createJestConfig(config);
