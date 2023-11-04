@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-const Button = styled(Link)`
+const PrimaryButton = styled(Link)`
   background-color: var(--nike-primary);
   color: var(--nike-neutral-100);
   border-radius: 50px;
@@ -13,4 +13,4 @@ const Button = styled(Link)`
   text-decoration: none;
 `;
 
-export default Button;
+export default PrimaryButton;

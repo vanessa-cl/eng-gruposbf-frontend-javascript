@@ -1,4 +1,4 @@
-export type ButtonLinkProps = {
+export type PrimaryButtonProps = {
   id: string;
   href: string;
   title: string;

@@ -17,12 +17,29 @@ export default createGlobalStyle`
     --nike-heading-1: 32px;
   }
 
-  body {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+  }
+
+  body {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
+  }
+
+  body, #__next {
+    background-color: grey;
+    height: 100%;
+    width: 100%;
+  }
+
+  #icon {
+    width: 16px;
+    height: 16px;
+    background-Color: red;
   }
 
 `;
