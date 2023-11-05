@@ -61,9 +61,8 @@ describe("should test accordion component", () => {
       />
     );
 
-    // refatorar ao inserir os icons
-    const accordionButton = screen.getByText("+");
+    const accordionButton = screen.getByAltText("Mais");
     await act(async () => userEvent.click(accordionButton));
-    expect(screen.getByText("-")).toBeInTheDocument();
+    expect(screen.getByAltText("Menos")).toBeInTheDocument();
   });
 });

@@ -1,9 +1,11 @@
+import { icons } from "@/utils/icons";
 import S from "../../ui/Input/styles/index";
+import Image from "next/image";
 
 export default function SearchStoresInput() {
   return (
     <S.InputWrapper $variant="primary">
-      <div id="icon"></div>
+      <Image src={icons.glass} alt="Lupa de busca"></Image>
       <S.Input
         $variant="primary"
         id="search-stores-input"

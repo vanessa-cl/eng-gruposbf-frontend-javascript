@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 const AccordionIcon = styled.button`
-  background: white;
+  background: transparent;
   border: none;
   cursor: pointer;
-  width: 25px;
-  height: 25px;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 export default AccordionIcon;

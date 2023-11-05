@@ -19,7 +19,8 @@ const config = {
     "/build/",
     "/dist/",
     "/.next/",
-    "/styles/"
+    "/styles/",
+    "/utils/"
   ],
   silent: false
 };
