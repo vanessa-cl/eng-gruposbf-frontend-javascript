@@ -7,6 +7,7 @@ const AccordionLabel = styled.label`
   align-items: center;
   padding: 16px 0px;
   cursor: pointer;
+  font-size: var(--nike-label-medium);
 
   p {
     text-transform: uppercase;

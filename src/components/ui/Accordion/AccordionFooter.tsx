@@ -8,7 +8,7 @@ export default function AccordionFooter(props: AccordionProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <S.Accordion>
+    <S.Accordion aria-labelledby={props.id}>
       <hr></hr>
       <S.AccordionLabel htmlFor={props.id}>
         <p>{props.label}</p>
@@ -20,19 +20,21 @@ export default function AccordionFooter(props: AccordionProps) {
         </S.AccordionIcon>
       </S.AccordionLabel>
       <hr></hr>
-      <S.AccordionList>
-        {isOpen ? (
-          props.items?.map((item: AccordionItem) => {
+      {isOpen ? (
+        <ul>
+          {props.items?.map((item: AccordionItem) => {
             return (
               <li key={item.id}>
-                <S.AccordionItem href={item.href}>{item.label}</S.AccordionItem>
+                <S.AccordionItem href={item.href} title={item.label}>
+                  {item.label}
+                </S.AccordionItem>
               </li>
             );
-          })
-        ) : (
-          <></>
-        )}
-      </S.AccordionList>
+          })}
+        </ul>
+      ) : (
+        <></>
+      )}
     </S.Accordion>
   );
 }

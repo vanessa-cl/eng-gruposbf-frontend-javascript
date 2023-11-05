@@ -31,7 +31,7 @@ export default createGlobalStyle`
   }
 
   body, #__next {
-    background-color: var(--nike-neutral-700);
+    background-color: var(--nike-neutral-100);
     height: 100%;
     width: 100%;
   }
