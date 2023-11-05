@@ -22,6 +22,7 @@ import pgto_Discover from "../../public/assets/images/pgto_Discover.svg";
 import pgto_Boleto from "../../public/assets/images/pgto_Boleto.svg";
 import icon_minus from "../../public/assets/images/icon_minus.svg";
 import icon_plus from "../../public/assets/images/icon_plus.svg";
+import icon_menu from "../../public/assets/images/icon_menu.svg";
 
 export const icons = {
   bag: icon_sacola,
@@ -34,6 +35,7 @@ export const icons = {
   leftArrow: icon_seta_esquerda,
   minus: icon_minus,
   plus: icon_plus,
+  menu: icon_menu,
 };
 
 export const logos = {

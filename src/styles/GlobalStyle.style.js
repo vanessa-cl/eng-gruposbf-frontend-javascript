@@ -40,14 +40,4 @@ export default createGlobalStyle`
     list-style: none;
   }
 
-  a {
-    text-decoration: none;
-  }
-
-  #icon {
-    width: 16px;
-    height: 16px;
-    background-Color: red;
-  }
-
 `;
