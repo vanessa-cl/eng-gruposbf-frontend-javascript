@@ -31,9 +31,17 @@ export default createGlobalStyle`
   }
 
   body, #__next {
-    background-color: grey;
+    background-color: var(--nike-neutral-700);
     height: 100%;
     width: 100%;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   #icon {
