@@ -1,5 +1,3 @@
-import shouldMock from "@/utils/shouldMock";
-
 export const MOCK_STORES = [
   {
     id: 1,
