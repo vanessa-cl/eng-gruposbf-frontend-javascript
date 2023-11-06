@@ -15,6 +15,7 @@ export default createGlobalStyle`
     --nike-paragraph-medium: 16px;
     --nike-heading-2: 18px;
     --nike-heading-1: 32px;
+    --nike-heading-store: 24px;
   }
 
   *,

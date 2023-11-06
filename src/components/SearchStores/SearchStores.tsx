@@ -2,6 +2,7 @@ import Head from "next/head";
 import SignUp from "../SignUp/SignUp";
 import SearchStoresInput from "./SearchStoresInput/SearchStoresInput";
 import * as S from "./styles/SearchStoresContainers";
+import SearchStoresResults from "./SearchStoresResults/SearchStoresResults";
 
 export default function SearchStores() {
   return (
@@ -15,6 +16,7 @@ export default function SearchStores() {
       <S.SearchStoresForm as="form">
         <SearchStoresInput />
       </S.SearchStoresForm>
+      <SearchStoresResults items={[]} />
       <SignUp />
     </S.SearchStoresMain>
   );

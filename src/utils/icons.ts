@@ -6,6 +6,7 @@ import icon_pin_mapa from "../../public/assets/images/icon_pin_mapa.svg";
 import icon_seta_baixo from "../../public/assets/images/icon_seta_baixo.svg";
 import icon_seta_direita from "../../public/assets/images/icon_seta_direita.svg";
 import icon_seta_esquerda from "../../public/assets/images/icon_seta_esquerda.svg";
+import icon_seta_cima from "../../public/assets/images/icon_seta_cima.svg";
 import logo_Jordan from "../../public/assets/images/logo_Jordan.svg";
 import logo_nike from "../../public/assets/images/logo_nike.svg";
 import logo_nike_snkrs from "../../public/assets/images/logo_nike_snkrs.svg";
@@ -33,6 +34,7 @@ export const icons = {
   downArrow: icon_seta_baixo,
   rightArrow: icon_seta_direita,
   leftArrow: icon_seta_esquerda,
+  upArrow: icon_seta_cima,
   minus: icon_minus,
   plus: icon_plus,
   menu: icon_menu,
