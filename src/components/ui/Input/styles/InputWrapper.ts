@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const InputWrapper = styled.div<{ $variant: "primary" | "secondary" }>`
-  width: 80%;
+  width: 90%;
   padding: 3px 0;
   border-radius: 30px;
   height: 48px;

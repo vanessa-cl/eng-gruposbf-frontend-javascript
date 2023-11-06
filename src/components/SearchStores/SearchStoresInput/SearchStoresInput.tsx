@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function SearchStoresInput() {
   return (
-    <S.InputWrapper $variant="primary">
+    <S.InputWrapper $variant="primary" aria-label="Buscar lojas">
       <Image src={icons.glass} alt="Lupa de busca"></Image>
       <S.Input
         $variant="primary"
