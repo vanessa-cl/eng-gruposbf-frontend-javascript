@@ -1,27 +1,7 @@
 import { act, render, screen, waitFor } from "@testing-library/react";
 import SearchStoresResults from "../SearchStoresResults/SearchStoresResults";
 import userEvent from "@testing-library/user-event";
-
-const MOCK_STORES = [
-  {
-    id: 1,
-    name: "NFS Alexania",
-    number: 6322,
-    latitude: "-16.121590171053200",
-    longitude: "-48.39803935435456",
-    address: "BR 060- km22 - Zona Rural",
-    distance: 10,
-  },
-  {
-    id: 2,
-    name: "NCS Araguaia",
-    number: 6326,
-    latitude: "-16.65827033456880",
-    longitude: "-49.25948895007950",
-    address: "Rua 44, 399 Setor Central",
-    distance: 10,
-  },
-];
+import { MOCK_STORES } from "@/services/GeolocationService";
 
 describe("should test search stores results component", () => {
   it("should render search stores results component", () => {
