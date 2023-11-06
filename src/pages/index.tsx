@@ -7,8 +7,8 @@ export default function Home() {
         <title>Nike</title>
         <meta name="description" content="Produtos e Coleções Exclusivas" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
+      
     </>
   );
 }

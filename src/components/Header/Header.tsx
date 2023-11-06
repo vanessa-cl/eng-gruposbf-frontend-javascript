@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <S.Header>
+    <S.Header aria-label="Cabeçalho">
       <S.HeaderRow $variant="primary">
         <Image id="nike" src={logos.nike} alt="Nike"></Image>
         <div>
