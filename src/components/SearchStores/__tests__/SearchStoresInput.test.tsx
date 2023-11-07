@@ -1,6 +1,5 @@
 import { act, render, screen, waitFor } from "@testing-library/react";
 import SearchStoresInput from "../SearchStoresInput/SearchStoresInput";
-import { SearchStoresInputProps } from "@/types/SearchStoresInputProps";
 import userEvent from "@testing-library/user-event";
 
 const MOCK_INPUT_PROPS = {

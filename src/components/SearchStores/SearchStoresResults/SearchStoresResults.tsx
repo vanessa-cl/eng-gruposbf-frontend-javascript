@@ -2,11 +2,11 @@ import { icons } from "@/utils/icons";
 import SearchStoresItem from "../SearchStoresItem/SearchStoresItem";
 import * as S from "../styles/SearchStoresResults";
 import Image from "next/image";
-import { SearchStoresResultsProps } from "@/types/SearchStoresItemProps";
+import { SearchStoresResultsProps } from "@/types/SearchStoresResultsProps";
 import { useState } from "react";
 
 export default function SearchStoresResults({
-  items,
+  nearestStores,
 }: SearchStoresResultsProps) {
   const [filterByShortestDistance, setFilterByShortestDistance] =
     useState(true);
@@ -31,14 +31,13 @@ export default function SearchStoresResults({
         </div>
       </S.SearchStoresFilter>
       <ul>
-        {items.map((item) => {
+        {nearestStores.map((item) => {
           return (
             <SearchStoresItem
-              id={item.id}
-              key={item.id}
+              key={item.number}
               name={item.name}
               number={item.number}
-              address={item.address}
+              adress={item.adress}
               distance={item.distance}
             />
           );

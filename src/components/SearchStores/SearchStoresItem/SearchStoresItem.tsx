@@ -1,9 +1,9 @@
-import { SearchStoresItemProps } from "@/types/SearchStoresItemProps";
 import { icons } from "@/utils/icons";
 import Image from "next/image";
 import * as S from "../styles/SearchStoresItem";
+import { StoreItem } from "@/types/Store";
 
-export default function SearchStoresItem(props: SearchStoresItemProps) {
+export default function SearchStoresItem(props: StoreItem) {
   return (
     <S.SearchStoresItem aria-label={props.name}>
       <S.SearchStoresLabel>
@@ -18,7 +18,7 @@ export default function SearchStoresItem(props: SearchStoresItemProps) {
       </S.SearchStoresLabel>
       <S.SearchStoresData>
         <address>
-          {props.name}, {props.address}
+          {props.name}, {props.adress}
         </address>
         <div>
           <p>Atendimento:</p>
