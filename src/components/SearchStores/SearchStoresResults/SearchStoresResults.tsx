@@ -3,13 +3,26 @@ import SearchStoresItem from "../SearchStoresItem/SearchStoresItem";
 import * as S from "../styles/SearchStoresResults";
 import Image from "next/image";
 import { SearchStoresResultsProps } from "@/types/SearchStoresResultsProps";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { StoreItem } from "@/types/Store";
 
 export default function SearchStoresResults({
   nearestStores,
 }: SearchStoresResultsProps) {
-  const [filterByShortestDistance, setFilterByShortestDistance] =
-    useState(true);
+  const [sortByNearestStores, setSortByNearestStores] = useState<boolean>(true);
+  const [filteredStores, setFilteredStores] = useState<Array<StoreItem>>([]);
+
+  useEffect(() => {
+    setFilteredStores([...nearestStores]);
+  }, [nearestStores]);
+
+  useEffect(() => {
+    if (!sortByNearestStores) {
+      setFilteredStores([
+        ...nearestStores.sort((a, b) => (a.distance > b.distance ? -1 : 1)),
+      ]);
+    }
+  }, [nearestStores, sortByNearestStores]);
 
   return (
     <S.SearchStoresResults as="section" aria-label="Lojas encontradas">
@@ -18,32 +31,34 @@ export default function SearchStoresResults({
           <button
             id="filter-by-distance-button"
             name="filter-by-distance-button"
-            onClick={() =>
-              setFilterByShortestDistance(!filterByShortestDistance)
-            }
+            onClick={() => setSortByNearestStores(!sortByNearestStores)}
           >
-            {filterByShortestDistance ? "Menor distância" : "Maior distância"}
+            {sortByNearestStores ? "Menor distância" : "Maior distância"}
           </button>
           <Image
-            src={filterByShortestDistance ? icons.downArrow : icons.upArrow}
+            src={sortByNearestStores ? icons.downArrow : icons.upArrow}
             alt="Seta"
           />
         </div>
       </S.SearchStoresFilter>
       <ul>
-        {nearestStores.map((item) => {
-          return (
-            <SearchStoresItem
-              key={item.number}
-              name={item.name}
-              number={item.number}
-              latitude={item.latitude}
-              longitude={item.longitude}
-              adress={item.adress}
-              distance={item.distance}
-            />
-          );
-        })}
+        {filteredStores.length > 0 ? (
+          filteredStores.map((item) => {
+            return (
+              <SearchStoresItem
+                key={item.number}
+                name={item.name}
+                number={item.number}
+                latitude={item.latitude}
+                longitude={item.longitude}
+                adress={item.adress}
+                distance={item.distance}
+              />
+            );
+          })
+        ) : (
+          <></>
+        )}
       </ul>
     </S.SearchStoresResults>
   );
