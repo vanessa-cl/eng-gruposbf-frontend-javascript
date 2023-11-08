@@ -15,12 +15,16 @@ Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para visu
 ## Requisitos funcionais 🗺️
 
 - Aplicação em Mobile First.
-- Exibição de lista com as três lojas mais próximas do usuário para retirada de pedidos.
+- Utilização das coordenadas atuais do usuário para listagem das três lojas mais próximas para retirada de pedidos.
 - Mapa com indicadores da localização das lojas encontradas.
 
 ## Demonstração da aplicação 📱
 
-<!-- TODO -->
+### Layout
+![demonstracao_1.gif](public\assets\images\demonstracao_1.gif){style="display: block; margin: 0 auto"}
+
+### Funcionalidades
+![demonstracao_2.gif](public\assets\images\demonstracao_2.gif){style="display: block; margin: 0 auto"}
 
 ## Estrutura de pastas 📂
 
@@ -74,11 +78,15 @@ Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para visu
 
 ## Cobertura de testes 👩‍💻
 
-<!-- TODO -->
+Os testes unitários foram realizados a cada etapa do desenvolvimento para garantir o pleno funcionamento da aplicação.
+
+![tests_coverage.png](public\assets\images\tests_coverage.png)
 
 ## Implementações futuras 📌
 
 - Fazer tratamento de possíveis erros das APIs utilizadas.
+- Incluir componentes de carregamento para melhorar a experiência do usuário.
+- Detectar clique no botão de voltar em smartphones.
 - Implementar versão Desktop.
 - Documentar componentes de UI no Storybook
 
@@ -86,6 +94,6 @@ Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para visu
 
 [Figma](https://www.figma.com/file/yP8EVezGVQyW6dftG3McY2/Teste-geolocaliza%C3%A7%C3%A3o-front-end?type=design&node-id=16-3570&mode=design)
 
-[Deploy]()
+[Deploy](https://eng-gruposbf-frontend-javascript-3wxo.vercel.app/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
