@@ -7,7 +7,7 @@ export type MapProps = {
 };
 
 export type MapWrapperProps = {
-  center: google.maps.LatLngLiteral;
+  center: google.maps.LatLngLiteral | null;
   nearestStores: Array<StoreItem>;
   overlapMap: boolean;
   setOverlapMap: React.Dispatch<React.SetStateAction<boolean>>;

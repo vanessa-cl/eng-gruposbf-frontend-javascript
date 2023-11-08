@@ -1,5 +1,3 @@
-import { SearchStoresPageProps } from "@/types/SearchStoresPageProps";
-
 export const MOCK_ALL_STORES = [
   {
     name: "NFS Alexania",

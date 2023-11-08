@@ -6,7 +6,7 @@ export default function Map({ children, center }: MapProps) {
   const ref = useRef(null);
   const [map, setMap] = useState<google.maps.Map>();
 
-  const newProps = {
+  const mapProps = {
     map,
   };
 
@@ -26,10 +26,10 @@ export default function Map({ children, center }: MapProps) {
   }, [center]);
 
   return (
-    <MapContainer ref={ref}>
+    <MapContainer ref={ref} aria-label="Container Mapa">
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, newProps);
+          return React.cloneElement(child, mapProps);
         }
       })}
     </MapContainer>
