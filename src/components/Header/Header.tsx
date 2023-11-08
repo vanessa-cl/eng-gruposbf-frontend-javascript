@@ -6,14 +6,14 @@ import Link from "next/link";
 export default function Header() {
   return (
     <S.Header aria-label="Cabeçalho">
-      <S.HeaderRow $variant="primary">
+      <S.HeaderRow>
         <Image id="nike" src={logos.nike} alt="Nike"></Image>
         <div>
           <Image src={icons.bag} alt="Sacola de compras"></Image>
           <Image src={icons.menu} alt="Nike"></Image>
         </div>
       </S.HeaderRow>
-      <S.HeaderCarousel $variant="secondary">
+      <S.HeaderCarousel>
         <button>
           <Image src={icons.leftArrow} alt="Seta esquera"></Image>
         </button>
