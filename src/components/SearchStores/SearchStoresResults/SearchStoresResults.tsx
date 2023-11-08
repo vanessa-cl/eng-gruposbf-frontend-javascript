@@ -9,7 +9,7 @@ import { StoreItem } from "@/types/Store";
 export default function SearchStoresResults({
   nearestStores,
 }: SearchStoresResultsProps) {
-  const [sortByNearestStores, setSortByNearestStores] = useState<boolean>(true);
+  const [sortByNearestStores, setSortByNearestStores] = useState<number>(-1);
   const [filteredStores, setFilteredStores] = useState<Array<StoreItem>>([]);
 
   useEffect(() => {
@@ -17,11 +17,11 @@ export default function SearchStoresResults({
   }, [nearestStores]);
 
   useEffect(() => {
-    if (!sortByNearestStores) {
-      setFilteredStores([
-        ...nearestStores.sort((a, b) => (a.distance > b.distance ? -1 : 1)),
-      ]);
-    }
+    setFilteredStores([
+      ...nearestStores.sort((a, b) =>
+        a.distance > b.distance ? 1 : sortByNearestStores
+      ),
+    ]);
   }, [nearestStores, sortByNearestStores]);
 
   return (
@@ -31,12 +31,14 @@ export default function SearchStoresResults({
           <button
             id="filter-by-distance-button"
             name="filter-by-distance-button"
-            onClick={() => setSortByNearestStores(!sortByNearestStores)}
+            onClick={() =>
+              setSortByNearestStores(sortByNearestStores === -1 ? 1 : -1)
+            }
           >
-            {sortByNearestStores ? "Menor distância" : "Maior distância"}
+            {sortByNearestStores === -1 ? "Menor distância" : "Maior distância"}
           </button>
           <Image
-            src={sortByNearestStores ? icons.downArrow : icons.upArrow}
+            src={sortByNearestStores === -1 ? icons.downArrow : icons.upArrow}
             alt="Seta"
           />
         </div>

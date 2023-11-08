@@ -87,5 +87,13 @@ describe("should test search stores results component", () => {
         ).toBeInTheDocument();
       });
     });
+
+    await act(async () => {
+      userEvent.click(filterButton);
+    });
+    
+    await waitFor(async () => {
+      expect(filterButton).toHaveTextContent("Menor distância");
+    });
   });
 });
