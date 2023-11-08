@@ -4,6 +4,7 @@ const SignUpSection = styled.section`
   background-color: var(--nike-neutral-200);
   color: var(--nike-neutral-700);
   padding: 64px 16px;
+  width: 100%;
 
   img {
     width: 100px;

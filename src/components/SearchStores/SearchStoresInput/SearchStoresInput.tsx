@@ -8,7 +8,9 @@ export default function SearchStoresInput(props: SearchStoresInputProps) {
 
   return (
     <S.InputWrapper $variant="primary" aria-label="Buscar lojas">
-      <Image src={icons.glass} alt="Lupa de busca"></Image>
+      <div>
+        <Image src={icons.glass} alt="Lupa de busca"></Image>
+      </div>
       <S.Input
         $variant="primary"
         id="search-stores-input"

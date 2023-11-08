@@ -7,7 +7,7 @@ const InputWrapper = styled.div<{ $variant: "primary" | "secondary" }>`
   height: 48px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: ${($props) =>
     $props.$variant === "primary"
       ? "var(--nike-neutral-100)"
@@ -17,6 +17,13 @@ const InputWrapper = styled.div<{ $variant: "primary" | "secondary" }>`
       $props.$variant === "primary"
         ? "var(--nike-neutral-300)"
         : "var(--nike-neutral-200)"};
+
+  div {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    width: 30px;
+  }
 `;
 
 export default InputWrapper;
