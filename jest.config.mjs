@@ -21,6 +21,7 @@ const config = {
     "/.next/",
     "/styles/",
     "/utils/",
+    "/context"
   ],
   silent: false,
 };

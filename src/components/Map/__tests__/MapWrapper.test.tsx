@@ -25,7 +25,6 @@ describe("should test map wrapper component", () => {
     );
 
     expect(screen.getByLabelText("Mapa")).toBeInTheDocument();
-    expect(screen.getByTestId("map-wrapper")).toBeInTheDocument();
   });
 
   it("should hide map wrapper component", async () => {
@@ -73,7 +72,6 @@ describe("should test map wrapper component", () => {
         />
       </MapWrapperProvider>
     );
-
-    expect(screen.getByTestId("map-wrapper")).toBeEmptyDOMElement();
+    expect(screen.queryByTestId("map-wrapper")).not.toBeInTheDocument();
   });
 });

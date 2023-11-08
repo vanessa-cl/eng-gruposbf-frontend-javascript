@@ -9,6 +9,7 @@ import SearchStores from "../SearchStores";
 import { MOCK_ALL_STORES } from "@/services/GeolocationService";
 import userEvent from "@testing-library/user-event";
 import MapWrapperProvider from "@/context/MapWrapperContext";
+import { mockNavigatorGeolocation } from "@/utils/test-utils";
 
 const MOCK_EXPECTED_DISTANCES = ["3315.2 km", "3971.3 km", "3997.7 km"];
 
@@ -119,5 +120,30 @@ describe("should test search stores component", () => {
     await waitFor(async () =>
       expect(await screen.findByLabelText("Mapa")).toBeInTheDocument()
     );
+  });
+
+  it("should render stores list by user geolocation", async () => {
+    mockNavigatorGeolocation().getCurrentPositionMock.mockImplementation(
+      (success, rejected) =>
+        success({
+          coords: {
+            latitude: 51.1,
+            longitude: 45.3,
+          },
+        })
+    );
+    render(
+      <MapWrapperProvider>
+        <SearchStores allStores={MOCK_ALL_STORES} />
+      </MapWrapperProvider>
+    );
+
+    expect(
+      global.navigator.geolocation.getCurrentPosition
+    ).toHaveBeenCalledTimes(1);
+
+    MOCK_ALL_STORES.forEach((item) => {
+      expect(screen.getByText(item.name)).toBeInTheDocument();
+    });
   });
 });

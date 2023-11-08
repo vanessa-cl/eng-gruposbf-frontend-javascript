@@ -19,6 +19,20 @@ export default function SearchStores({ allStores }: SearchStoresPageProps) {
   const { center } = useContext(MapWrapperContext) as MapWrapperContextProps;
 
   useEffect(() => {
+    const getUserPosition = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          setUserCoordinates({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        });
+      }
+    };
+    getUserPosition();
+  }, []);
+
+  useEffect(() => {
     if (center) {
       setOverlapMap(true);
     }

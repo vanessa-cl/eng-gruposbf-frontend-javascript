@@ -35,29 +35,27 @@ export default function MapWrapper({
           Voltar
         </button>
       </header>
-      <div data-testid="map-wrapper">
-        <Wrapper apiKey={API_KEY}>
-          <Map center={center!}>
-            {nearestStores.length > 0 ? (
-              nearestStores.map((store: any) => {
-                let location = {
-                  lat: Number(store.latitude),
-                  lng: Number(store.longitude),
-                };
-                return (
-                  <Marker
-                    key={store.number}
-                    position={location}
-                    title={store.name}
-                  />
-                );
-              })
-            ) : (
-              <></>
-            )}
-          </Map>
-        </Wrapper>
-      </div>
+      <Wrapper apiKey={API_KEY}>
+        <Map center={center!} data-testid="map-wrapper">
+          {nearestStores.length > 0 ? (
+            nearestStores.map((store: any) => {
+              let location = {
+                lat: Number(store.latitude),
+                lng: Number(store.longitude),
+              };
+              return (
+                <Marker
+                  key={store.number}
+                  position={location}
+                  title={store.name}
+                />
+              );
+            })
+          ) : (
+            <></>
+          )}
+        </Map>
+      </Wrapper>
     </MapPageStyle>
   );
 }
