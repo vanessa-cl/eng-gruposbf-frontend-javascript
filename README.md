@@ -1,40 +1,91 @@
+## Projeto 🤾‍♂️
+
+Desafio de Geolocalização para o processo seletivo para Front-End Engineer do Grupo SBF.
+
+### Execução 💻
+
+Use o comando `npm install` para instalar as dependências necessárias para a aplicação.
+
+O comando `npm run dev` inicia um servidor local para desenvolvimento.
+
+Os comandos `npm run build` e `npm run start` criam um build de produção e o inicia em um servidor local, respectivamente.
+
+Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para visualizar a aplicação em execução.
+
+## Requisitos funcionais 🗺️
+
+- Aplicação em Mobile First.
+- Exibição de lista com as três lojas mais próximas do usuário para retirada de pedidos.
+- Mapa com indicadores da localização das lojas encontradas.
+
+## Demonstração da aplicação 📱
+
+<!-- TODO -->
+
+## Estrutura de pastas 📂
+
+- **public**: criada por padrão pelo NextJS
+  - **assets**: armazena recursos estáticos como imagens, fontes e etc.
+- **src:**
+  - **components**: composta por componentes reutilizáveis de UI e componentes específicos da aplicação.
+  - **context**: armazena e expõe variáveis de estado global (Context API do React).
+  - **pages**: utilizada para as páginas da aplicação com roteamento feito pelo NextJS.
+  - **services**: composta por arquivos de classes com métodos de requisição às APIs REST.
+  - **styles**: possui arquivos de estilos globais.
+  - **types**: armazena tipos customizados para utilização na aplicação.
+  - **utils**: armazena arquivos de funções utilitárias.
+
+## Ferramentas utilizadas 👩‍🔧
+
+#### Editor de Código
+
+- Visual Studio Code
+
+#### Ambiente
+
+- Node v20.9.0
+
+#### Boas práticas de código
+
+- Eslint
+- Prettier
+- TypeScript
+
+#### Biblioteca de interface do usuário
+
+- ReactJS
+
+#### Server Side Rendering
+
+- NextJS
+
+#### Estilização
+
+- Styled Components
+
+#### Testes unitários
+
+- Jest
+- React Testing Library
+
+#### Maps API
+
+- [Google Maps React Wrapper](https://github.com/googlemaps/react-wrapper)
+
+## Cobertura de testes 👩‍💻
+
+<!-- TODO -->
+
+## Implementações futuras 📌
+
+- Fazer tratamento de possíveis erros das APIs utilizadas.
+- Implementar versão Desktop.
+- Documentar componentes de UI no Storybook
+
+## Links 🔍
+
+[Figma](https://www.figma.com/file/yP8EVezGVQyW6dftG3McY2/Teste-geolocaliza%C3%A7%C3%A3o-front-end?type=design&node-id=16-3570&mode=design)
+
+[Deploy]()
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
