@@ -3,15 +3,20 @@ import SignUp from "../SignUp/SignUp";
 import SearchStoresInput from "./SearchStoresInput/SearchStoresInput";
 import * as S from "./styles/SearchStoresContainers";
 import SearchStoresResults from "./SearchStoresResults/SearchStoresResults";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useContext } from "react";
 import { Coordinates } from "@/types/Coordinates";
 import { Store, StoreItem } from "@/types/Store";
 import { SearchStoresPageProps } from "@/types/SearchStoresPageProps";
+import { MapWrapperContext } from "@/context/MapWrapperContext";
+import { MapWrapperContextProps } from "@/types/MapWrapperContextProps";
 
 export default function SearchStores({ allStores }: SearchStoresPageProps) {
   const [searchValue, setSearchValue] = useState<string>("");
   const [userCoordinates, setUserCoordinates] = useState<Coordinates>();
   const [nearestStores, setNearestStores] = useState<Array<StoreItem>>([]);
+  const { updateMapWrapperProps } = useContext(
+    MapWrapperContext
+  ) as MapWrapperContextProps;
 
   const getUserCoordinates = (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,6 +66,18 @@ export default function SearchStores({ allStores }: SearchStoresPageProps) {
   useEffect(() => {
     getAllDistances(allStores);
   }, [allStores, userCoordinates, getAllDistances]);
+
+  useEffect(() => {
+    if (Object(userCoordinates).values > 0) {
+      updateMapWrapperProps({
+        userCoordinates: {
+          lat: userCoordinates!.latitude,
+          lng: userCoordinates!.longitude,
+        },
+        nearestStores: nearestStores,
+      });
+    }
+  }, [nearestStores, userCoordinates, updateMapWrapperProps]);
 
   return (
     <S.SearchStoresMain>

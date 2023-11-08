@@ -1,8 +1,8 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { MainLayoutProps } from "@/types/MainLayoutProps";
+import { ChildrenProps } from "@/types/ChildrenProps";
 
-export default function MainLayout({ children }: MainLayoutProps) {
+export default function MainLayout({ children }: ChildrenProps) {
   return (
     <>
       <Header />

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export type MainLayoutProps = {
+export type ChildrenProps = {
   children: ReactNode;
 };

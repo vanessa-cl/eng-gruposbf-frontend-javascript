@@ -37,6 +37,8 @@ export default function SearchStoresResults({
               key={item.number}
               name={item.name}
               number={item.number}
+              latitude={item.latitude}
+              longitude={item.longitude}
               adress={item.adress}
               distance={item.distance}
             />

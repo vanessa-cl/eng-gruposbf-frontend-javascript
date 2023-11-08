@@ -9,6 +9,8 @@ export type Store = {
 export type StoreItem = {
   name: string;
   number: number;
+  latitude: string;
+  longitude: string;
   adress: string;
   distance: number;
 };
