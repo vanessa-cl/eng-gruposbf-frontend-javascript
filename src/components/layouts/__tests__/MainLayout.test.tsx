@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import MainLayout from "../MainLayout";
+import MapWrapperProvider from "@/context/MapWrapperContext";
 
 const MOCK_CHILDREN = () => {
   return <h1>MOCK CHILDREN</h1>;
@@ -8,9 +9,11 @@ const MOCK_CHILDREN = () => {
 describe("should test main layout component", () => {
   it("should render header and footer", () => {
     render(
-      <MainLayout>
-        <MOCK_CHILDREN />
-      </MainLayout>
+      <MapWrapperProvider>
+        <MainLayout>
+          <MOCK_CHILDREN />
+        </MainLayout>
+      </MapWrapperProvider>
     );
 
     expect(
@@ -23,9 +26,11 @@ describe("should test main layout component", () => {
 
   it("should render children component", () => {
     render(
-      <MainLayout>
-        <MOCK_CHILDREN />
-      </MainLayout>
+      <MapWrapperProvider>
+        <MainLayout>
+          <MOCK_CHILDREN />
+        </MainLayout>
+      </MapWrapperProvider>
     );
 
     expect(screen.getByText("MOCK CHILDREN")).toBeInTheDocument();

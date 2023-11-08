@@ -9,14 +9,20 @@ import { Store, StoreItem } from "@/types/Store";
 import { SearchStoresPageProps } from "@/types/SearchStoresPageProps";
 import { MapWrapperContext } from "@/context/MapWrapperContext";
 import { MapWrapperContextProps } from "@/types/MapWrapperContextProps";
+import MapWrapper from "../Map/MapWrapper";
 
 export default function SearchStores({ allStores }: SearchStoresPageProps) {
   const [searchValue, setSearchValue] = useState<string>("");
   const [userCoordinates, setUserCoordinates] = useState<Coordinates>();
   const [nearestStores, setNearestStores] = useState<Array<StoreItem>>([]);
-  const { updateNearestStores } = useContext(
-    MapWrapperContext
-  ) as MapWrapperContextProps;
+  const [overlapMap, setOverlapMap] = useState<boolean>(true);
+  const { center } = useContext(MapWrapperContext) as MapWrapperContextProps;
+
+  useEffect(() => {
+    if (center) {
+      setOverlapMap(true);
+    }
+  }, [center]);
 
   const getUserCoordinates = (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,10 +63,8 @@ export default function SearchStores({ allStores }: SearchStoresPageProps) {
           .sort((a, b) => (a.distance > b.distance ? 1 : -1))
           .slice(0, 3);
         setNearestStores(filteredDistances);
-        updateNearestStores(filteredDistances);
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [userCoordinates]
   );
 
@@ -75,6 +79,16 @@ export default function SearchStores({ allStores }: SearchStoresPageProps) {
         <meta name="description" content="Produtos e Coleções Exclusivas" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      {center ? (
+        <MapWrapper
+          center={center!}
+          nearestStores={nearestStores}
+          overlapMap={overlapMap}
+          setOverlapMap={setOverlapMap}
+        />
+      ) : (
+        <></>
+      )}
       <h1>Lojas</h1>
       <S.SearchStoresForm
         as="form"

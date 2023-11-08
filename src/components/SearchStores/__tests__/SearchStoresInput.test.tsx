@@ -1,6 +1,7 @@
 import { act, render, screen, waitFor } from "@testing-library/react";
 import SearchStoresInput from "../SearchStoresInput/SearchStoresInput";
 import userEvent from "@testing-library/user-event";
+import MapWrapperProvider from "@/context/MapWrapperContext";
 
 const MOCK_INPUT_PROPS = {
   searchValue: "-15.121590171053200,-45.39803935435456",
@@ -10,10 +11,12 @@ const MOCK_INPUT_PROPS = {
 describe("should test search stores input component", () => {
   it("should render input", () => {
     render(
-      <SearchStoresInput
-        searchValue={MOCK_INPUT_PROPS.searchValue}
-        setSearchValue={MOCK_INPUT_PROPS.setSearchValue}
-      />
+      <MapWrapperProvider>
+        <SearchStoresInput
+          searchValue={MOCK_INPUT_PROPS.searchValue}
+          setSearchValue={MOCK_INPUT_PROPS.setSearchValue}
+        />
+      </MapWrapperProvider>
     );
 
     expect(
@@ -23,10 +26,12 @@ describe("should test search stores input component", () => {
 
   it("should change input value", async () => {
     render(
-      <SearchStoresInput
-        searchValue={MOCK_INPUT_PROPS.searchValue}
-        setSearchValue={MOCK_INPUT_PROPS.setSearchValue}
-      />
+      <MapWrapperProvider>
+        <SearchStoresInput
+          searchValue={MOCK_INPUT_PROPS.searchValue}
+          setSearchValue={MOCK_INPUT_PROPS.setSearchValue}
+        />
+      </MapWrapperProvider>
     );
 
     const input = screen.getByPlaceholderText("Busque por endereço ou CEP");

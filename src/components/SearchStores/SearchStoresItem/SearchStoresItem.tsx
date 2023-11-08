@@ -2,7 +2,6 @@ import { icons } from "@/utils/icons";
 import Image from "next/image";
 import * as S from "../styles/SearchStoresItem";
 import { StoreItem } from "@/types/Store";
-import Link from "next/link";
 import { useContext } from "react";
 import { MapWrapperContext } from "@/context/MapWrapperContext";
 import { MapWrapperContextProps } from "@/types/MapWrapperContextProps";
@@ -13,6 +12,7 @@ export default function SearchStoresItem(props: StoreItem) {
   ) as MapWrapperContextProps;
 
   const updateMapCenter = () => {
+    window.scrollTo(0, 0);
     updateCenter({
       lat: Number(props.latitude),
       lng: Number(props.longitude),
@@ -26,10 +26,10 @@ export default function SearchStoresItem(props: StoreItem) {
           <h2>{props.name}</h2>
           <p>{props.distance.toFixed(1)} km</p>
         </div>
-        <Link href="/map" onClick={() => updateMapCenter()}>
+        <button id="view-map" name="view-map" onClick={() => updateMapCenter()}>
           <Image src={icons.pinLink} alt="Pin" />
           Ver no mapa
-        </Link>
+        </button>
       </S.SearchStoresLabel>
       <S.SearchStoresData>
         <address>

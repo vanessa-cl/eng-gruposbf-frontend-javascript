@@ -19,8 +19,8 @@ export const SearchStoresLabel = styled.div`
     font-weight: 600;
   }
 
-  a,
-  div {
+  div, 
+  button {
     display: flex;
     flex-direction: row;
     color: var(--nike-neutral-700);
@@ -35,10 +35,14 @@ export const SearchStoresLabel = styled.div`
     margin-right: 8px;
   }
 
-  a {
+  button {
     margin-top: 8px;
     line-height: 150%;
     font-size: var(--nike-paragraph-medium);
+    border: none;
+    background: transparent;
+    text-decoration: underline;
+    cursor: pointer;
   }
 `;
 
