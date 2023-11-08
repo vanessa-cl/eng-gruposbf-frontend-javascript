@@ -26,6 +26,9 @@ export default function SearchStores({ allStores }: SearchStoresPageProps) {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
           });
+          setSearchValue(
+            `${position.coords.latitude},${position.coords.longitude}`
+          );
         });
       }
     };
@@ -41,7 +44,7 @@ export default function SearchStores({ allStores }: SearchStoresPageProps) {
   const getUserCoordinates = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchValue !== "") {
-      const coordinatesValues = searchValue.split(",");
+      const coordinatesValues = searchValue.trim().split(",");
       setUserCoordinates({
         latitude: Number(coordinatesValues[0]),
         longitude: Number(coordinatesValues[1]),
@@ -56,10 +59,13 @@ export default function SearchStores({ allStores }: SearchStoresPageProps) {
     return (
       Math.sqrt(
         Math.pow(
-          Number(storeCoordinates.longitude) -
-            Number(storeCoordinates.latitude),
+          Number(storeCoordinates.longitude) - userCoordinates.longitude,
           2
-        ) + Math.pow(userCoordinates.longitude - userCoordinates.latitude, 2)
+        ) +
+          Math.pow(
+            Number(storeCoordinates.latitude) - userCoordinates.latitude,
+            2
+          )
       ) * 100
     );
   };

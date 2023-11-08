@@ -10,7 +10,7 @@ export const MOCK_STORES = [
     latitude: "-16.121590171053200",
     longitude: "-48.39803935435456",
     adress: "BR 060- km22 - Zona Rural",
-    distance: 1000,
+    distance: 67.4,
   },
   {
     name: "NCS Araguaia",
@@ -18,7 +18,7 @@ export const MOCK_STORES = [
     latitude: "-16.65827033456880",
     longitude: "-49.25948895007950",
     adress: "Rua 44, 399 Setor Central",
-    distance: 1000,
+    distance: 68.9,
   },
 ];
 

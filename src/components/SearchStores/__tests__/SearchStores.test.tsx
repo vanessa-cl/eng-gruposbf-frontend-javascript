@@ -11,7 +11,7 @@ import userEvent from "@testing-library/user-event";
 import MapWrapperProvider from "@/context/MapWrapperContext";
 import { mockNavigatorGeolocation } from "@/utils/test-utils";
 
-const MOCK_EXPECTED_DISTANCES = ["3315.2 km", "3971.3 km", "3997.7 km"];
+const MOCK_EXPECTED_DISTANCES = ["6.6 km", "7.1 km", "16.4 km"];
 
 global.scrollTo = jest.fn();
 

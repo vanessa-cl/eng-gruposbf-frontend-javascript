@@ -1,25 +1,24 @@
 export const MOCK_ALL_STORES = [
   {
-    name: "NFS Alexania",
-    number: 6322,
-    latitude: "-16.121590171053200",
-    longitude: "-48.39803935435456",
-    adress: "BR 060- km22 – Zona Rural",
+    name: "NCS Light",
+    number: 6314,
+    latitude: "-23.54635675193150",
+    longitude: "-46.63906668860330",
+    adress: "Rua Coronel Xavier de Toledo, 23, Ljs 23 a 27 e 42, Centro",
   },
   {
-    name: "NCS Araguaia",
-    number: 6326,
-    latitude: "-16.65827033456880",
-    longitude: "-49.25948895007950",
-    adress: "Rua 44, 399 Setor Central",
+    name: "NFS Osasco",
+    number: 6309,
+    latitude: "-23.5378982063025",
+    longitude: "-46.7677134290867",
+    adress: "Av. dos Autonomistas, 1542, Lj AR06, Vila Yara",
   },
   {
-    name: "NFS Catarina",
-    number: 6335,
-    latitude: "-23.420399642511900",
-    longitude: "-47.16403706665317",
-    adress:
-      "Rodovia Castelo Branco - KM 60 - Loja 45/46 - Bairro: Dona Catarina",
+    name: "NFS São Bernardo",
+    number: 6305,
+    latitude: "-23.66890903708250",
+    longitude: "-46.57509724627120",
+    adress: "Rua Garcia Lorca, 301, Lj 40 - Paulicéia",
   },
 ];
 
