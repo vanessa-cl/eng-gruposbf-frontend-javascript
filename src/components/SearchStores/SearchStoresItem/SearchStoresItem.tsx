@@ -2,8 +2,23 @@ import { icons } from "@/utils/icons";
 import Image from "next/image";
 import * as S from "../styles/SearchStoresItem";
 import { StoreItem } from "@/types/Store";
+import Link from "next/link";
+import { useContext } from "react";
+import { MapWrapperContext } from "@/context/MapWrapperContext";
+import { MapWrapperContextProps } from "@/types/MapWrapperContextProps";
 
 export default function SearchStoresItem(props: StoreItem) {
+  const { updateCenter } = useContext(
+    MapWrapperContext
+  ) as MapWrapperContextProps;
+
+  const updateMapCenter = () => {
+    updateCenter({
+      lat: Number(props.latitude),
+      lng: Number(props.longitude),
+    });
+  };
+
   return (
     <S.SearchStoresItem aria-label={props.name}>
       <S.SearchStoresLabel>
@@ -11,10 +26,10 @@ export default function SearchStoresItem(props: StoreItem) {
           <h2>{props.name}</h2>
           <p>{props.distance.toFixed(1)} km</p>
         </div>
-        <a href="#">
+        <Link href="/map" onClick={() => updateMapCenter()}>
           <Image src={icons.pinLink} alt="Pin" />
           Ver no mapa
-        </a>
+        </Link>
       </S.SearchStoresLabel>
       <S.SearchStoresData>
         <address>

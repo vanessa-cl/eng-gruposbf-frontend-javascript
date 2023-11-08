@@ -1,6 +1,8 @@
-import { MapWrapperProps } from "./MapProps";
+import { StoreItem } from "./Store";
 
 export type MapWrapperContextProps = {
-  mapWrapperProps: MapWrapperProps | null;
-  updateMapWrapperProps: (props: MapWrapperProps) => void;
+  center: { lat: number; lng: number } | null;
+  updateCenter: (props: { lat: number; lng: number }) => void;
+  nearestStores: Array<StoreItem> | null;
+  updateNearestStores: (props: Array<StoreItem>) => void;
 };

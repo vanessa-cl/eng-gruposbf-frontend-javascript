@@ -7,6 +7,6 @@ export type MapProps = {
 };
 
 export type MapWrapperProps = {
-  userCoordinates: google.maps.LatLngLiteral;
+  center: google.maps.LatLngLiteral;
   nearestStores: Array<StoreItem>;
 };

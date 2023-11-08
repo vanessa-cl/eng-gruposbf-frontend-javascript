@@ -11,7 +11,7 @@ export default function Marker(options: google.maps.MarkerOptions) {
     marker.setOptions({
       position: options.position,
       title: options.title,
-      map: options.map,
+      map: options.map
     });
   }
 

@@ -14,7 +14,7 @@ export default function SearchStores({ allStores }: SearchStoresPageProps) {
   const [searchValue, setSearchValue] = useState<string>("");
   const [userCoordinates, setUserCoordinates] = useState<Coordinates>();
   const [nearestStores, setNearestStores] = useState<Array<StoreItem>>([]);
-  const { updateMapWrapperProps } = useContext(
+  const { updateNearestStores } = useContext(
     MapWrapperContext
   ) as MapWrapperContextProps;
 
@@ -53,31 +53,20 @@ export default function SearchStores({ allStores }: SearchStoresPageProps) {
             distance: calcDistance(store, userCoordinates!),
           };
         });
-        setNearestStores(
-          distances
-            .sort((a, b) => (a.distance > b.distance ? 1 : -1))
-            .slice(0, 3)
-        );
+        const filteredDistances = distances
+          .sort((a, b) => (a.distance > b.distance ? 1 : -1))
+          .slice(0, 3);
+        setNearestStores(filteredDistances);
+        updateNearestStores(filteredDistances);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [userCoordinates]
   );
 
   useEffect(() => {
     getAllDistances(allStores);
   }, [allStores, userCoordinates, getAllDistances]);
-
-  useEffect(() => {
-    if (Object(userCoordinates).values > 0) {
-      updateMapWrapperProps({
-        userCoordinates: {
-          lat: userCoordinates!.latitude,
-          lng: userCoordinates!.longitude,
-        },
-        nearestStores: nearestStores,
-      });
-    }
-  }, [nearestStores, userCoordinates, updateMapWrapperProps]);
 
   return (
     <S.SearchStoresMain>
