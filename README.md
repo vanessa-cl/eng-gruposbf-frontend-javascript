@@ -21,10 +21,10 @@ Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para visu
 ## Demonstração da aplicação 📱
 
 ### Layout
-![demonstracao_1.gif](public\assets\images\demonstracao_1.gif){style="display: block; margin: 0 auto"}
+<p align="center">  <img src="public\assets\images\demonstracao_1.gif" heigh="100" width="300" alt="demonstracao_1"> </p>
 
 ### Funcionalidades
-![demonstracao_2.gif](public\assets\images\demonstracao_2.gif){style="display: block; margin: 0 auto"}
+<p align="center">  <img src="public\assets\images\demonstracao_2.gif" heigh="100" width="300" alt="demonstracao_2"> </p>
 
 ## Estrutura de pastas 📂
 
@@ -80,7 +80,7 @@ Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para visu
 
 Os testes unitários foram realizados a cada etapa do desenvolvimento para garantir o pleno funcionamento da aplicação.
 
-![tests_coverage.png](public\assets\images\tests_coverage.png)
+<p align="center">  <img src="public\assets\images\tests_coverage.png" heigh="125" width="450" alt="tests_coverage"> </p>
 
 ## Implementações futuras 📌
 
