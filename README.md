@@ -97,3 +97,21 @@ Os testes unitários foram realizados a cada etapa do desenvolvimento para garan
 [Deploy](https://eng-gruposbf-frontend-javascript-3wxo.vercel.app/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Erros para correção
+
+Erro ocorre ao executar `npm run dev` em um ambiente com versão do NodeJS inferior que a versão 18.
+
+<p align="center">  <img src="public\assets\images\error_node_version.png" heigh="125" width="450" alt="error_node_version"> </p>
+
+### Possíveis soluções:
+
+Ao analisar o erro com atenção e realizar uma rápida pesquisa é possível descobrir que o erro acima pode ser solucionado de duas maneiras:
+
+- Alterando a versão do NodeJS para uma versão igual ou superior a 18 com o auxílio do nvm.
+
+<p align="center">  <img src="public\assets\images\nvm_example.png" heigh="125" width="450" alt="nvm_example"> </p>
+
+- Alterando a versão do NextJS para a versão anterior (13).
+
+<p align="center">  <img src="public\assets\images\next_version_example.png" heigh="125" width="450" alt="next_version_example"> </p>
