@@ -3,11 +3,7 @@ import { geolocationService } from "@/services/GeolocationService";
 import { SearchStoresPageProps } from "@/types/SearchStoresPageProps";
 
 export default function Home({ allStores }: SearchStoresPageProps) {
-  return (
-    <>
-      <SearchStores allStores={allStores} />
-    </>
-  );
+  return <SearchStores allStores={allStores} />;
 }
 
 export async function getServerSideProps() {
@@ -15,11 +11,10 @@ export async function getServerSideProps() {
     const allStores = await geolocationService.getAllStores();
     return {
       props: {
-        allStores: allStores,
+        allStores,
       },
     };
   } catch (e) {
-    console.log(e);
     return {
       props: {},
     };

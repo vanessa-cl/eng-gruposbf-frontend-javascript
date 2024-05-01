@@ -72,18 +72,20 @@ export default function SearchStores({ allStores }: SearchStoresPageProps) {
 
   const getAllDistances = useCallback(
     (allStores: Array<Store>) => {
-      if (userCoordinates) {
-        const distances = allStores!.map((store) => {
-          return {
-            ...store,
-            distance: calcDistance(store, userCoordinates!),
-          };
-        });
-        const filteredDistances = distances
-          .sort((a, b) => (a.distance > b.distance ? 1 : -1))
-          .slice(0, 3);
-        setNearestStores(filteredDistances);
+      if (!userCoordinates) {
+        return;
       }
+      console.log(allStores);
+      const distances = allStores!.map((store) => {
+        return {
+          ...store,
+          distance: calcDistance(store, userCoordinates!),
+        };
+      });
+      const filteredDistances = distances
+        .sort((a, b) => (a.distance > b.distance ? 1 : -1))
+        .slice(0, 3);
+      setNearestStores(filteredDistances);
     },
     [userCoordinates]
   );

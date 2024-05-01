@@ -1,3 +1,5 @@
+import stores from "../data/stores.json";
+
 export const MOCK_ALL_STORES = [
   {
     name: "NCS Light",
@@ -23,11 +25,11 @@ export const MOCK_ALL_STORES = [
 ];
 
 class GeolocationService {
-  API_URL = process.env.NEXT_PUBLIC_API_URL! as string;
+  // API_URL = process.env.NEXT_PUBLIC_API_URL! as string;
   NODE_ENV = process.env.NODE_ENV!;
 
   async getAllStores() {
-    return fetch(this.API_URL).then((res) => res.json());
+    return stores.stores;
   }
 }
 
